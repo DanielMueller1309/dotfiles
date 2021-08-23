@@ -169,8 +169,6 @@ let g:buffergator_hsplit_size = '10'
 nmap  <C-l> :bnext<CR>
 " Move to the previous buffer
 nmap  <C-h> :bprevious<CR>
-
-
 " indentLine
 " fügt vertikale Striche bei Einrückungen ein
 filetype plugin indent on
