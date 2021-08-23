@@ -143,6 +143,8 @@ noremap <s-right> <c-w><
 noremap <c-w>h :split<cr>
 noremap <c-w>v :vsplit<cr>
 
+noremap <c-w>N :vnew<cr>
+
 set mouse=a                       " Enable mouse drag on window splits
 set clipboard=unnamedplus         "https://unix.stackexchange.com/questions/12535/how-to-copy-text-from-vim-to-an-external-program
 
