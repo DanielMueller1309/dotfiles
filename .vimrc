@@ -192,103 +192,21 @@ if executable('rg')
       set wildmenu
       set wildignore=*.o,*~
 
+let NERDTreeShowHidden=1
+set background=dark
 
 
+colorscheme molokai
+hi NonText 		guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
+hi Normal guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
+hi SignColumn guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
+hi DiffText  ctermbg=3 cterm=bold
+hi Delimiter       ctermfg=3335
+hi DiffAdd   ctermbg=22
+hi DiffDelete ctermbg=88
+hi Diff     guifg=#960050 guibg=#ff0000
 
+hi FoldColumn    guifg=#000000 guibg=#000000 gui=none ctermfg=2 ctermbg=2
+hi Folded guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-" PLUGINS ---------------------------------------------------------------- {{{
-
-"call plug#begin('~/.vim/plugged')
-"
-"  "
-"call plug#end()
-
-call vundle#begin()
-  Plugin 'VundleVim/Vundle.vim'
-"
-  Plugin 'dense-analysis/ale'
-" filemanager
-  Plugin 'preservim/nerdtree'
-" entferne trailing whitespaces
-  Plugin 'nestorsalceda/vim-strip-trailing-whitespaces'
-" statusline
-  Plugin 'itchyny/lightline.vim'
-" languagepack
-  Plugin 'sheerun/vim-polyglot'
-" buffer wechseln
-  Plugin 'jeetsukumaran/vim-buffergator'
-" change icons neben der zeilennummerierung
-  Plugin 'mhinz/vim-signify'
-" fuzzy finder
-  Plugin 'ctrlpvim/ctrlp.vim'
-" einrückungsmarkierungen
-  Plugin 'Yggdroot/indentLine'
-" git integration G:
-  Plugin 'tpope/vim-fugitive'
-" git integration
-  Plugin 'jreybert/vimagit'
-" auto einrueckung
-  Plugin 'tpope/vim-sleuth'
-" zeilen ein/auskommentieren
-  Plugin 'tpope/vim-commentary'
-call vundle#end()
-"
-
-" }}}
-
-
-" MAPPINGS --------------------------------------------------------------- {{{
-
-" Mappings code goes here.
-
-" }}}
-
-
-" VIMSCRIPT -------------------------------------------------------------- {{{
-
-" This will enable code folding.
-" Use the marker method of folding.
-augroup filetype_vim
-      autocmd!
-          autocmd FileType vim setlocal foldmethod=marker
-	augroup END
-
-	" More Vimscripts code goes here.
-
-	" }}}
-
-
-	" STATUS LINE
-	" ------------------------------------------------------------ {{{
-
-	" Status bar code goes here.
-
-	" }}}
+hi CursorColumn guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
