@@ -8,6 +8,43 @@ nnoremap confe :e $MYVIMRC<CR>
 " Reload vims configuration filONON
 nnoremap r :source $MYVIMRC<CR>
 
+call vundle#begin()
+  Plugin 'VundleVim/Vundle.vim'
+"
+  Plugin 'dense-analysis/ale'
+" filemanager
+  Plugin 'preservim/nerdtree'
+" entferne trailing whitespaces
+  Plugin 'nestorsalceda/vim-strip-trailing-whitespaces'
+" statusline
+  Plugin 'itchyny/lightline.vim'
+" languagepack
+  Plugin 'sheerun/vim-polyglot'
+" buffer wechseln
+  Plugin 'jeetsukumaran/vim-buffergator'
+" change icons neben der zeilennummerierung
+  Plugin 'mhinz/vim-signify'
+" fuzzy finder
+  Plugin 'ctrlpvim/ctrlp.vim'
+" einrückungsmarkierungen
+  Plugin 'Yggdroot/indentLine'
+" git integration G:
+  Plugin 'tpope/vim-fugitive'
+" git integration
+  Plugin 'jreybert/vimagit'
+" auto einrueckung
+  Plugin 'tpope/vim-sleuth'
+" zeilen ein/auskommentieren
+  Plugin 'tpope/vim-commentary'
+" add to .vimrc
+  Plugin 'flazz/vim-colorschemes'
+" theme
+  Plugin 'ParamagicDev/vim-medic_chalk'
+  Plugin 'lewis6991/moonlight.vim'
+  Plugin 'jdsimcoe/hyper.vim'
+  Plugin 'sickill/vim-monokai'
+
+  call vundle#end()
 " allgemeine Optionen
 set encoding=UTF-8
 set undolevels=1000
