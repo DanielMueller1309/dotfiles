@@ -1,0 +1,7 @@
+[user]
+	    name = Michael Grote
+			    email = michael.grote@posteo.de
+[credential]
+	    helper = store
+[core]
+	    editor = vim
