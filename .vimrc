@@ -43,8 +43,10 @@ call vundle#begin()
   Plugin 'lewis6991/moonlight.vim'
   Plugin 'jdsimcoe/hyper.vim'
   Plugin 'sickill/vim-monokai'
-
+  Plugin 'euclio/vim-markdown-composer'
   call vundle#end()
+let g:markdown_composer_autostart = 1
+let g:markdown_composer_open_browser = 1
 " allgemeine Optionen
 set encoding=UTF-8
 set undolevels=1000
