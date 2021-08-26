@@ -1,7 +1,10 @@
 [user]
-	    name = Michael Grote
-			    email = michael.grote@posteo.de
+	    name = DanielMueller1309
+			    email = danielmueller-dm@gmx.de
 [credential]
 	    helper = store
+[alias]
+	logs = log --all --graph --pretty=format:'%iCred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=re
+
 [core]
 	    editor = vim
