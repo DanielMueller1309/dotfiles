@@ -115,3 +115,17 @@ fi
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 tmux attach -t default || tmux new -s default
 fi
+# PS1
+# https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh
+# https://gist.github.com/justintv/168835
+# https://misc.flogisoft.com/bash/tip_colors_and_formatting
+# git-symbole
+# * unstaged
+# + staged
+# $ stashed
+# % untracked
+export GIT_PS1_SHOWUNTRACKEDFILES=1
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
+export PS1='\[\e[32m\]\u@\[\e[32m\]\h:\[\e[94m\]\w\[\e[33m\]$(__git_ps1) \[\e[94m\]> \[\e[39m\]'
+#\[\e[37m\]\A
