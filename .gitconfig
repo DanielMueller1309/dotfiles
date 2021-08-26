@@ -4,7 +4,7 @@
 [credential]
 	    helper = store
 [alias]
-	logs = log --all --graph --pretty=format:'%iCred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=re
+	logs = log --all --graph --pretty=format:'%iCred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
 [core]
 	    editor = vim
