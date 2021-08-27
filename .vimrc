@@ -53,9 +53,26 @@ set undolevels=1000
 set smartcase
 set gdefault        " global bei suche immer mit an
 
+" line numbers setting
+set number   " Show line numbers.
+"https://jeffkreeftmeijer.com/vim-numberr
+set number relativenumber
+"augroup numbertoggle
+"    autocmd!
+"    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+"    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+"    augroup END
+
+" toggle linenumbers
+nmap <C-w>0 :set norelativenumber!<CR>
+" :set nonu!<CR>
+
+" Markdown preview
+let g:markdown_composer_autostart = 1
+let g:markdown_composer_open_browser = 1
+
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
-
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
 " Enable plugins and load plugin for the detected file type.
