@@ -190,18 +190,16 @@ if executable('rg')
 
 set background=dark
 
-
+"color
 colorscheme molokai
 hi NonText 		guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 hi Normal guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 hi SignColumn guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
-hi DiffText  ctermbg=3 cterm=bold
+hi DiffChange  ctermbg=3
 hi Delimiter       ctermfg=3335
-hi DiffAdd   ctermbg=22
+hi DiffAdd   ctermbg=22 ctermfg=22
 hi DiffDelete ctermbg=88
-hi Diff     guifg=#960050 guibg=#ff0000
-
 hi FoldColumn    guifg=#000000 guibg=#000000 gui=none ctermfg=2 ctermbg=2
 hi Folded guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 
-hi CursorColumn guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
+hi CursorColumn guifg=#000000 guibg=#000000 gui=none ctermfg=15 ctermbg=35
