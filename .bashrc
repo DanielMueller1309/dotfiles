@@ -92,8 +92,8 @@ alias ll='ls -la'
 #alias la='ls -A'
 #alias l='ls -CF'
 alias openpdf='evince'
-alias vpnup='wg-quick up Acer5linuxos'
-alias vpndown='wg-quick down Acer5linuxos'
+alias vpnup='wg-quick up /etc/wireguard/Acer5linuxos.conf'
+alias vpndown='wg-quick down /etc/wireguard/Acer5linuxos.conf'
 alias vpn='sudo wg'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
