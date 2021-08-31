@@ -182,6 +182,7 @@ if executable('rg')
       " vimagit
       " https://github.com/jreybert/vimagit#mappings
       nmap  <Leader>m :Magit<cr>
+      let g:magit_discard_untracked_do_delete=1
       " Kommandovervollständigung
       " https://www.reddit.com/r/vim/comments/oo9gms/any_way_to_get_vim_to_not_defaulting_to_the_first/h5wygix/?context=8&depth=9
       set wildmode=longest,list,full
