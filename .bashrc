@@ -130,5 +130,5 @@ fi
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
-export PS1='\[\e[32m\]\u@\[\e[32m\]\h:\[\e[94m\]\w\[\e[33m\]$(__git_ps1) \[\e[94m\]> \[\e[39m\]'
+export PS1='\[\e[32m\]\u@\[\e[32m\]\h:\[\e[94m\]\w\[\e[33m\]$(__git_ps1) \[\e[94m\]\n> \[\e[39m\]'
 #\[\e[37m\]\A
