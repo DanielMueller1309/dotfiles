@@ -133,3 +133,12 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export PS1='\[\e[32m\]\u@\[\e[32m\]\h:\[\e[94m\]\w\[\e[33m\]$(__git_ps1) \[\e[94m\]\n> \[\e[39m\]'
 #\[\e[37m\]\A
+
+# avoid duplicates..
+export HISTCONTROL=ignoredups:erasedups
+
+# append history entries..
+shopt -s histappend
+
+# After each command, save and reload history
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
