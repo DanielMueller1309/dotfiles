@@ -95,7 +95,7 @@ alias openpdf='evince'
 alias vpnup='wg-quick up /etc/wireguard/Acer5linuxos.conf'
 alias vpndown='wg-quick down /etc/wireguard/Acer5linuxos.conf'
 alias vpn='sudo wg'
-alias xampp='sudo /opt/lampp/lampp'
+alias xampp='sudo /opt/lampp/lampp &'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
