@@ -1,3 +1,4 @@
+set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 
 syntax on
@@ -9,15 +10,11 @@ nnoremap r :source $MYVIMRC<CR>
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
 "
-  Plugin 'dense-analysis/ale'
-" filemanager
   Plugin 'preservim/nerdtree'
 " entferne trailing whitespaces
   Plugin 'nestorsalceda/vim-strip-trailing-whitespaces'
 " statusline
   Plugin 'itchyny/lightline.vim'
-" languagepack
-  Plugin 'sheerun/vim-polyglot'
 " buffer wechseln
   Plugin 'jeetsukumaran/vim-buffergator'
 " change icons neben der zeilennummerierung
@@ -34,16 +31,11 @@ call vundle#begin()
   Plugin 'tpope/vim-sleuth'
 " zeilen ein/auskommentieren
   Plugin 'tpope/vim-commentary'
-" add to .vimrc
-  Plugin 'flazz/vim-colorschemes'
 " theme
-  Plugin 'ParamagicDev/vim-medic_chalk'
-  Plugin 'lewis6991/moonlight.vim'
-  Plugin 'jdsimcoe/hyper.vim'
   Plugin 'sickill/vim-monokai'
   Plugin 'euclio/vim-markdown-composer'
   call vundle#end()
-
+filetype plugin indent on
 " allgemeine Optionen
 set encoding=UTF-8
 set undolevels=1000
@@ -62,7 +54,6 @@ set number relativenumber
 
 " toggle linenumbers
 nmap <C-w>0 :set norelativenumber!<CR>
-" :set nonu!<CR>
 
 " Markdown preview
 let g:markdown_composer_autostart = 1
@@ -76,16 +67,10 @@ filetype on
 filetype plugin on
 " Load an indent file for the detected file type.
 filetype indent on
-" Highlight cursor line underneath the cursor horizontally.
-"set cursorline
-" Highlight cursor line underneath the cursor vertically.
-"set cursorcolumn
-"Set shift width to 4 spaces.
+"Set shift width to 2 spaces.
 set shiftwidth=2
 " Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
-" Do not wrap lines. Allow long lines to extend as far as the line goes.
-"set nowrap
 " While searching though a file incrementally highlight matching characters as you type.
 set incsearch
 " Ignore capital letters during search.
@@ -114,20 +99,7 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 set mouse=a                       " Enable mouse drag on window splits
 "https://unix.stackexchange.com/questions/12535/how-to-copy-text-from-vim-to-an-external-program
 set clipboard=unnamedplus
-" Map the F5 key to run a Python script inside Vim.
-" I map F5 to a chain of commands here.
-" :w saves the file.
-" <CR> (carriage return) is like pressing the enter key.
-" !clear runs the external clear screen command.
-" !python3 % executes the current file with Python.
-nnoremap <f5> :w <CR>:!clear <CR>:!python3 % <CR>
 
-" You can split the window in Vim by typing :split or :vsplit.
-" Navigate the split view easier by pressing SHIFT+j, SHIFT+k, SHIFT+h, or SHIFT+l.
-"nnoremap <s-j> <c-w>j
-"nnoremap <s-k> <c-w>k
-"nnoremap <s-h> <c-w>h
-"nnoremap <s-l> <c-w>l
 "Resize split windows using arrow keys by pressing:
 "SHIFT+LEFT, or SHIFT+RIGHT.
 noremap <s-left> <c-w><
@@ -141,14 +113,12 @@ let NERDTreeShowHidden=1
 "split and vplit keytrokes
 noremap <c-w>- :split<cr>
 noremap <c-w>/ :vsplit<cr>
-
+"new window in vertikal split
 noremap <c-w>N :vnew<cr>
-
 
 " lightline/statusline
 set laststatus=2
 let g:lightline = {'colorscheme': 'wombat','active': {'left': [ [ 'mode', 'paste' ],[ 'gitbranch', 'readonly', 'filename','modified' ] ]},'component_function': {'gitbranch': 'FugitiveHead'},}
-
 
 " buffergator
 " https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
@@ -193,7 +163,7 @@ if executable('rg')
 set background=dark
 
 "color
-colorscheme molokai
+"colorscheme molokai
 hi NonText 		guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 hi Normal guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 hi SignColumn guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
