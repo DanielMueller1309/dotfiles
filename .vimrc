@@ -175,3 +175,5 @@ hi FoldColumn    guifg=#000000 guibg=#000000 gui=none ctermfg=2 ctermbg=2
 hi Folded guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 
 hi CursorColumn guifg=#000000 guibg=#000000 gui=none ctermfg=15 ctermbg=35
+"helpfull links:
+"http://vimregex.com/
