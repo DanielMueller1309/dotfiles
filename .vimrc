@@ -1,6 +1,6 @@
 set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
-
+set autoread
 syntax on
 " Edit vimr configuration file
 nnoremap confe :e $MYVIMRC<CR>
