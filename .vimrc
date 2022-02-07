@@ -169,13 +169,14 @@ set background=dark
 hi NonText 		guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 hi Normal guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 hi SignColumn guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
-hi DiffChange  ctermbg=3
+"https://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
+hi DiffChange  ctermbg=166
 hi Delimiter       ctermfg=3335
 hi DiffAdd   ctermbg=22 ctermfg=22
 hi DiffDelete ctermbg=88
+hi DiffText ctermbg=22
 hi FoldColumn    guifg=#000000 guibg=#000000 gui=none ctermfg=2 ctermbg=2
 hi Folded guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
-
 hi CursorColumn guifg=#000000 guibg=#000000 gui=none ctermfg=15 ctermbg=35
 "helpfull links:
 "http://vimregex.com/
