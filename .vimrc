@@ -5,8 +5,7 @@ syntax on
 " Edit vimr configuration file
 nnoremap confe :e $MYVIMRC<CR>
 " Reload vims configuration filONON
-nnoremap r :source $MYVIMRC<CR>
-
+noremap <c-w>r :source $MYVIMRC<CR>
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
 "
