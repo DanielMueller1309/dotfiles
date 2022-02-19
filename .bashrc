@@ -97,6 +97,7 @@ alias vpndown='wg-quick down /etc/wireguard/Acer5linuxos.conf'
 alias vpn='sudo wg'
 alias xampp='sudo /opt/lampp/lampp &'
 alias openpng='gthumb'
+alias ip='ip -c'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
