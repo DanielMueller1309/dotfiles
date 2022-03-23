@@ -158,7 +158,8 @@ let g:ctrlp_show_hidden = 1
 " https://github.com/ctrlpvim/ctrlp.vim
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|sw*)$'
+let g:ctrlp_open_multiple_files = 'v'
 
 " vimagit
 " https://github.com/jreybert/vimagit#mappings
