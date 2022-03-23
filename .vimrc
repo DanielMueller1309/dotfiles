@@ -33,6 +33,8 @@ call vundle#begin()
 " theme
   Plugin 'sickill/vim-monokai'
   Plugin 'euclio/vim-markdown-composer'
+ " quick-scope
+  Plugin 'unblevable/quick-scope'
   call vundle#end()
 filetype plugin indent on
 " allgemeine Optionen
@@ -40,6 +42,14 @@ set encoding=UTF-8
 set undolevels=1000
 set smartcase
 set gdefault        " global bei suche immer mit an
+
+
+" ### quick-scope
+" Trigger a highlight in the appropriate direction only when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+ highlight QuickScopePrimary  cterm=reverse
+ highlight QuickScopeSecondary  cterm=reverse
+
 
 " line numbers setting
 set number   " Show line numbers.
