@@ -186,5 +186,6 @@ hi DiffText ctermbg=22
 hi FoldColumn    guifg=#000000 guibg=#000000 gui=none ctermfg=2 ctermbg=2
 hi Folded guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 hi CursorColumn guifg=#000000 guibg=#000000 gui=none ctermfg=15 ctermbg=35
+hi MatchParen cterm=bold,reverse ctermbg=none
 "helpfull links:
 "http://vimregex.com/
