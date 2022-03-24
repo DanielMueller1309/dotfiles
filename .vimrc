@@ -2,8 +2,6 @@ set nocompatible
 set rtp+=~/.vim/bundle/Vundle.vim
 set autoread
 syntax on
-" Edit vimr configuration file
-nnoremap confe :e $MYVIMRC<CR>
 " Reload vims configuration filONON
 noremap <c-w>r :source $MYVIMRC<CR>
 call vundle#begin()
