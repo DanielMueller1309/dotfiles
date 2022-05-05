@@ -96,6 +96,7 @@ alias vpnup='wg-quick up /etc/wireguard/Acer5linuxos.conf'
 alias vpndown='wg-quick down /etc/wireguard/Acer5linuxos.conf'
 alias vpn='sudo wg'
 alias vpnnew='vpndown && vpnup'
+alias vpnwatch="sudo watch -n1 -c 'unbuffer sudo wg'"
 alias xampp='sudo /opt/lampp/lampp &'
 alias openpng='gthumb'
 alias ip='ip -c'
