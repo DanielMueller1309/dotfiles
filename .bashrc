@@ -98,7 +98,6 @@ alias vpn='sudo wg'
 alias vpnnew='vpndown && vpnup'
 alias vpnwatch="sudo watch -n1 -c 'unbuffer sudo wg'"
 alias xampp='sudo /opt/lampp/lampp &'
-alias openpng='gthumb'
 alias ip='ip -c'
 
 alias sonic-pi_start='sonic-pi & pasuspender -- jackd -R -d alsa -d hw:1'
