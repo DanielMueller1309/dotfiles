@@ -99,6 +99,7 @@ alias vpnnew='vpndown && vpnup'
 alias vpnwatch="sudo watch -n1 -c 'unbuffer sudo wg'"
 alias xampp='sudo /opt/lampp/lampp &'
 alias ip='ip -c'
+alias onedrive_watch="watch -n1 'onedrive --display-sync-status --verbose'"
 
 alias sonic-pi_start='sonic-pi & pasuspender -- jackd -R -d alsa -d hw:1'
 # Alias definitions.
