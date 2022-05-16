@@ -91,6 +91,9 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 alias ll='ls -lah'
 #alias la='ls -A'
 #alias l='ls -CF'
+
+#own aliases
+
 alias openpdf='okular'
 alias vpnup='wg-quick up /etc/wireguard/Acer5linuxos.conf'
 alias vpndown='wg-quick down /etc/wireguard/Acer5linuxos.conf'
