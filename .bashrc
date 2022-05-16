@@ -119,6 +119,12 @@ function bluetooth_disconnect {
 
 
 function vpn () {
+    if [[ -n "$2" ]]; then
+	default_wg_interface="$2"
+    else
+	default_wg_interface="/etc/wireguard/Acer5linuxos.conf"
+    fi
+
     if [ "$1" == "up" ]; then
 	wg-quick up $default_wg_interface
     elif  [ "$1" == "down" ]; then
@@ -128,22 +134,26 @@ function vpn () {
     elif  [ "$1" == "watch" ]; then
 	sudo watch -n1 -c 'unbuffer sudo wg'
     else
-	echo 'Usage: vpn [up|down|new|watch]
+	echo 'Usage: vpn [up|down|new|watch] [interface file]
 
-	Arguments:
+    Arguments:
 
-	- up,		set wg up for default wg interface
 
-	- down:		set wg down for default wg interface
+    [option]:
 
-	- new:		first set wg interface down than up
+    - up,		set wg up for default wg interface
 
-	- watch:	open watch programm to see wg interface stuff
+    - down,		set wg down for default wg interface
+
+    - new,		first set wg interface down than up
+
+    - watch,		open watch programm to see wg interface stuff
+
+    [interface file]: 	optional, if not set used default_wg_interface from bashrc function
 
 	'
     fi
 }
-default_wg_interface="/etc/wireguard/Acer5linuxos.conf"
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
