@@ -105,6 +105,23 @@ alias ip='ip -c'
 alias onedrive_watch="watch -n1 'onedrive --display-sync-status --verbose'"
 
 alias sonic-pi_start='sonic-pi & pasuspender -- jackd -R -d alsa -d hw:1'
+
+
+#own funxtions
+function bluetooth_connect {
+    if [ -n "$1" ]; then
+	bluetoothctl connect < bluetoothctl devices | grep "$1" | sed 's/\(Device \)\(.*\)\( '$1'\)/\2/'
+    else
+	echo "Usage: bluetooth_connect <realname of bluetooth device to connect>"
+    fi
+}
+function bluetooth_disconnect {
+    if [ -n "$1" ]; then
+	bluetoothctl disconnect < bluetoothctl devices | grep "$1" | sed 's/\(Device \)\(.*\)\( '$1'\)/\2/'
+    else
+	echo "Usage: bluetooth_disconnect <realname of bluetooth device to connect>"
+    fi
+}
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
