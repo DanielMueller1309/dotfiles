@@ -122,6 +122,35 @@ function bluetooth_disconnect {
 	echo "Usage: bluetooth_disconnect <realname of bluetooth device to connect>"
     fi
 }
+
+
+function vpn () {
+    if [ "$1" == "up" ]; then
+	wg-quick up $default_wg_interface
+    elif  [ "$1" == "down" ]; then
+	wg-quick down $default_wg_interface
+    elif  [ "$1" == "new" ]; then
+	wg-quick down $default_wg_interface && wg-quick up $default_wg_interface
+    elif  [ "$1" == "watch" ]; then
+	sudo watch -n1 -c 'unbuffer sudo wg'
+    else
+	echo 'Usage: vpn [up|down|new|watch]
+
+	Arguments:
+
+	- up,		set wg up for default wg interface
+
+	- down:		set wg down for default wg interface
+
+	- new:		first set wg interface down than up
+
+	- watch:	open watch programm to see wg interface stuff
+
+	'
+    fi
+}
+default_wg_interface="/etc/wireguard/Acer5linuxos.conf"
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
