@@ -95,15 +95,9 @@ alias ll='ls -lah'
 #own aliases
 
 alias openpdf='okular'
-alias vpnup='wg-quick up /etc/wireguard/Acer5linuxos.conf'
-alias vpndown='wg-quick down /etc/wireguard/Acer5linuxos.conf'
-alias vpn='sudo wg'
-alias vpnnew='vpndown && vpnup'
-alias vpn_watch="sudo watch -n1 -c 'unbuffer sudo wg'"
 alias xampp='sudo /opt/lampp/lampp &'
 alias ip='ip -c'
 alias onedrive_watch="watch -n1 'onedrive --display-sync-status --verbose'"
-
 alias sonic-pi_start='sonic-pi & pasuspender -- jackd -R -d alsa -d hw:1'
 
 
