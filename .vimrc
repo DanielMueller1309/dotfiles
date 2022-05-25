@@ -66,6 +66,9 @@ nmap <C-w>0 :set norelativenumber!<CR>
 let g:markdown_composer_autostart = 1
 let g:markdown_composer_open_browser = 1
 
+
+"vim sudo_save
+nmap sudow :w !sudo tee % >/dev/null
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
