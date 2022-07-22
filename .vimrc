@@ -44,6 +44,9 @@ call vundle#begin()
   Plugin 'unblevable/quick-scope'
   call vundle#end()
 
+" Enable plugins and load plugin for the detected file type.
+filetype plugin on
+
 " ### quick-scope
 " Trigger a highlight in the appropriate direction only when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
@@ -85,6 +88,21 @@ let g:ctrlp_open_multiple_files = 'v'
 nmap  <Leader>m :Magit<cr>
 let g:magit_discard_untracked_do_delete=1
 
+" buffergator
+" https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
+" This allows buffers to be hidden if you've modified a buffer.
+" " This is almost a must if you wish to use buffers in this way.
+" https://medium.com/usevim/vim-101-set-hidden-f78800142855
+set hidden
+" öffne buffergator drawer horizontal unten
+" https://github.com/jeetsukumaran/vim-buffergator/blob/master/doc/buffergator.txt
+let g:buffergator_viewport_split_policy = 'B'
+" gibt an wie hoch der drawer sein soll
+let g:buffergator_hsplit_size = '10'
+" Move to the next buffer
+nmap  <C-l> :bnext<CR>
+" Move to the previous buffer
+nmap  <C-h> :bprevious<CR>
 """""""""""""""""""Plugins ENDE"""""""""""""""""""""""""""""
 
 
@@ -101,8 +119,6 @@ nmap suw :w !sudo tee % >/dev/null
 set nocompatible
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on
-" Enable plugins and load plugin for the detected file type.
-filetype plugin on
 " Load an indent file for the detected file type.
 filetype indent on
 "Set shift width to 2 spaces.
@@ -132,7 +148,7 @@ set wildmenu
 set wildmode=list:longest
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
-set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*.sw*
 "mouse input
 set mouse=a                       " Enable mouse drag on window splits
 "https://unix.stackexchange.com/questions/12535/how-to-copy-text-from-vim-to-an-external-program
@@ -149,21 +165,7 @@ noremap <c-w>/ :vsplit<cr>
 "new window in vertikal split
 noremap <c-w>N :vnew<cr>
 
-" buffergator
-" https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
-" This allows buffers to be hidden if you've modified a buffer.
-" " This is almost a must if you wish to use buffers in this way.
-" https://medium.com/usevim/vim-101-set-hidden-f78800142855
-set hidden
-" öffne buffergator drawer horizontal unten
-" https://github.com/jeetsukumaran/vim-buffergator/blob/master/doc/buffergator.txt
-let g:buffergator_viewport_split_policy = 'B'
-" gibt an wie hoch der drawer sein soll
-let g:buffergator_hsplit_size = '10'
-" Move to the next buffer
-nmap  <C-l> :bnext<CR>
-" Move to the previous buffer
-nmap  <C-h> :bprevious<CR>
+
 " Kommandovervollständigung
 " https://www.reddit.com/r/vim/comments/oo9gms/any_way_to_get_vim_to_not_defaulting_to_the_first/h5wygix/?context=8&depth=9
 set wildmode=longest,list,full
@@ -173,7 +175,6 @@ set wildignore=*.o,*~
 set background=dark
 
 "color
-"colorscheme molokai
 hi NonText 		guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 hi Normal guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
 hi SignColumn guifg=#000000 guibg=#000000 gui=none ctermfg=3335 ctermbg=335
