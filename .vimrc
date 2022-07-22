@@ -4,6 +4,15 @@ set autoread
 syntax on
 " Reload vims configuration filONON
 noremap <c-w>r :source $MYVIMRC<CR>
+
+" allgemeine Optionen
+set encoding=UTF-8
+set undolevels=1000
+set smartcase
+set gdefault        " global bei suche immer mit an
+
+
+""""""""""""""""""""""Plugins BEGIN"""""""""""""""""""""""""""""2
 call vundle#begin()
   Plugin 'VundleVim/Vundle.vim'
 "
@@ -34,13 +43,6 @@ call vundle#begin()
  " quick-scope
   Plugin 'unblevable/quick-scope'
   call vundle#end()
-filetype plugin indent on
-" allgemeine Optionen
-set encoding=UTF-8
-set undolevels=1000
-set smartcase
-set gdefault        " global bei suche immer mit an
-
 
 " ### quick-scope
 " Trigger a highlight in the appropriate direction only when pressing these keys:
@@ -48,27 +50,53 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
  highlight QuickScopePrimary  cterm=reverse
  highlight QuickScopeSecondary  cterm=reverse
 
+" Markdown preview
+let g:markdown_composer_autostart = 0
+let g:markdown_composer_open_browser = 0
+
+" NERDTree specific mappings.
+" Map the F3 key to toggle NERDTree open and close.
+nnoremap <F3> :NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
+
+" lightline/statusline
+set laststatus=2
+let g:lightline = {'colorscheme': 'wombat','active': {'left': [ [ 'mode', 'paste' ],[ 'gitbranch', 'readonly', 'filename','modified' ] ]},'component_function': {'gitbranch': 'FugitiveHead'},}
+
+" indentLine
+" fügt vertikale Striche bei Einrückungen ein
+filetype plugin indent on
+" ripgrep und ctrlp
+" sudo apt install ripgrep(rg)
+if executable('rg')
+        let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+endif
+let g:ctrlp_map = '<c-f>' "aufruf mit strg+f
+let g:ctrlp_show_hidden = 1
+" ignore files
+" https://github.com/ctrlpvim/ctrlp.vim
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|sw*)$'
+let g:ctrlp_open_multiple_files = 'v'
+
+" vimagit
+" https://github.com/jreybert/vimagit#mappings
+nmap  <Leader>m :Magit<cr>
+let g:magit_discard_untracked_do_delete=1
+
+"""""""""""""""""""Plugins ENDE"""""""""""""""""""""""""""""
+
 
 " line numbers setting
 set number   " Show line numbers.
 "https://jeffkreeftmeijer.com/vim-numberr
 set number relativenumber
-"augroup numbertoggle
-"    autocmd!
-"    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-"    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-"    augroup END
-
 " toggle linenumbers
 nmap <C-w>0 :set norelativenumber!<CR>
 
-" Markdown preview
-let g:markdown_composer_autostart = 1
-let g:markdown_composer_open_browser = 1
-
-
 "vim sudo_save
-nmap sudow :w !sudo tee % >/dev/null
+nmap suw :w !sudo tee % >/dev/null
 " Disable compatibility with vi which can cause unexpected issues.
 set nocompatible
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
@@ -115,20 +143,11 @@ set clipboard=unnamedplus
 noremap <s-left> <c-w><
 noremap <s-right> <c-w>>
 
-" NERDTree specific mappings.
-" Map the F3 key to toggle NERDTree open and close.
-nnoremap <F3> :NERDTreeToggle<cr>
-let NERDTreeShowHidden=1
-
 "split and vplit keytrokes
 noremap <c-w>- :split<cr>
 noremap <c-w>/ :vsplit<cr>
 "new window in vertikal split
 noremap <c-w>N :vnew<cr>
-
-" lightline/statusline
-set laststatus=2
-let g:lightline = {'colorscheme': 'wombat','active': {'left': [ [ 'mode', 'paste' ],[ 'gitbranch', 'readonly', 'filename','modified' ] ]},'component_function': {'gitbranch': 'FugitiveHead'},}
 
 " buffergator
 " https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
@@ -145,28 +164,6 @@ let g:buffergator_hsplit_size = '10'
 nmap  <C-l> :bnext<CR>
 " Move to the previous buffer
 nmap  <C-h> :bprevious<CR>
-" indentLine
-" fügt vertikale Striche bei Einrückungen ein
-filetype plugin indent on
-" ripgrep und ctrlp
-" sudo apt install ripgrep(rg)
-if executable('rg')
-        let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
-endif
-let g:ctrlp_map = '<c-f>' "aufruf mit strg+f
-let g:ctrlp_show_hidden = 1
-" ignore files
-" https://github.com/ctrlpvim/ctrlp.vim
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|sw*)$'
-let g:ctrlp_open_multiple_files = 'v'
-
-" vimagit
-" https://github.com/jreybert/vimagit#mappings
-nmap  <Leader>m :Magit<cr>
-let g:magit_discard_untracked_do_delete=1
-
 " Kommandovervollständigung
 " https://www.reddit.com/r/vim/comments/oo9gms/any_way_to_get_vim_to_not_defaulting_to_the_first/h5wygix/?context=8&depth=9
 set wildmode=longest,list,full
