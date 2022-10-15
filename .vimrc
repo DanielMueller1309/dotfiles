@@ -164,7 +164,7 @@ let g:ctrlp_open_multiple_files = 'v'
 
 " vimagit
 " https://github.com/jreybert/vimagit#mappings
-nmap  <Leader>m :Magit<cr>
+nmap  <c-w>m :Magit<cr>
 let g:magit_discard_untracked_do_delete=1
 
 " Kommandovervollständigung
