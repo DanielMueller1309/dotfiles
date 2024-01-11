@@ -113,6 +113,53 @@ set number relativenumber
 " toggle linenumbers
 nmap <C-w>0 :set norelativenumber!<CR>
 
+"tabline
+set showtabline=2
+set guitablabel=%N\ %t
+set tabline=%!AddTabNumber()
+function! AddTabNumber()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    " F_ge die Tab-Nummer hinzu
+    let s .= '%' . (i + 1) . 'T'
+    let s .= (i + 1) . '. '
+    " F_ge den Dateinamen hinzu
+    let buflist = tabpagebuflist(i + 1)
+    let winnr = tabpagewinnr(i + 1)
+    let bufnr = buflist[winnr - 1]
+    let bufname = bufname(bufnr)
+    let s .= bufname == '' ? '[No Name]' : fnamemodify(bufname, ':t')
+    " F_ge ein Leerzeichen nach jedem Tab hinzu
+    let s .= ' %T'
+  endfor
+  let s .= '%#TabLineFill#%T'
+  return s
+endfunction
+
+
+" Definiere eine benutzerdefinierte Funktion, um die Tab-Leiste zu formatieren
+function! MyTabLine()
+  let s = ''
+  for i in range(tabpagenr('$'))
+    " Tab-Nummer
+    let s .= '%' . (i + 1) . 'T'
+
+    " Tab-Name
+    let s .= ' ' . tabpagebuflist(i + 1)[0] . ' '
+
+    " Trennzeichen
+    let s .= (i + 1 == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#') . ' '
+  endfor
+  return s
+endfunction
+
+
+"tabstuff
+:set expandtab
+:set tabstop=2
+
+
+
 "vim sudo_save
 nmap suw :w !sudo tee % >/dev/null
 " Disable compatibility with vi which can cause unexpected issues.
